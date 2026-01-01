@@ -1,6 +1,10 @@
 const express = require("express");
+const cors = requre("cors")
 
 const app = express();
+
+app.use(cors());
+app.use(express.json());
 
 app.get("/", (req, res) => {
     res.send("Hello from Express!");
@@ -11,13 +15,14 @@ app.get("/api", (req,res) => {
 });
 
 app.post("/tasks", (req, res) => {
-    const task = req.body.text;
+    const task = req.body.text;  //debug: see what client sends
 
-    res.jspm({
-        id: 1,
-        text: task
+    res.status(201).json({
+        id: Date.now(),
+        text: taskText
     });
 });
+
 // start server
 app.listen(5000, () => {
     console.log("Server running on http://localhost:5000");
