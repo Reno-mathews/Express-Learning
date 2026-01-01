@@ -19,7 +19,7 @@ app.post("/tasks", (req, res) => {
 
     res.status(201).json({
         id: Date.now(),
-        text: taskText
+        text: task
     });
 });
 
