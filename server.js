@@ -23,6 +23,9 @@ app.post("/tasks", (req, res) => {
     });
 });
 
+app.get("/tasks", (req,res) => {
+    res.json([]);
+});
 // start server
 app.listen(5000, () => {
     console.log("Server running on http://localhost:5000");
