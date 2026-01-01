@@ -19,8 +19,8 @@ app.get("/api", (req,res) => {
 app.post("/tasks", (req, res) => {
     const task = {
         id: Date.now(),
-        text: task
-    }
+        text: req.body.text
+    };
     tasks.push(task);
 
     res.status(201).json(task);
@@ -29,6 +29,8 @@ app.post("/tasks", (req, res) => {
 app.get("/tasks", (req,res) => {
     res.json(tasks);
 });
+
+
 // start server
 app.listen(5000, () => {
     console.log("Server running on http://localhost:5000");
