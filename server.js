@@ -3,6 +3,8 @@ const cors = require("cors")
 
 const app = express();
 
+const tasks = [];
+
 app.use(cors());
 app.use(express.json());
 
@@ -15,16 +17,17 @@ app.get("/api", (req,res) => {
 });
 
 app.post("/tasks", (req, res) => {
-    const task = req.body.text;  //debug: see what client sends
-
-    res.status(201).json({
+    const task = {
         id: Date.now(),
         text: task
-    });
+    }
+    tasks.push(task);
+
+    res.status(201).json(task);
 });
 
 app.get("/tasks", (req,res) => {
-    res.json([]);
+    res.json(tasks);
 });
 // start server
 app.listen(5000, () => {
