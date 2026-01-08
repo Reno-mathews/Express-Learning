@@ -44,25 +44,9 @@ function App() {
 
                 <textarea 
                     placeholder="Content"
-                    value={content}
-                    onChange={e => setContent(e.target.value)}
-                />
-                <br />
-
-                <button>Add Note</button>
+                    
             </form>
-            {notes.length === 0 && <p>No notes yet</p>}
-                <ul>
-                    {notes.map(note => (
-                        <li key={note._id}>
-                            <strong>{note.title}</strong>
-                            <p>{note.content}</p>
-                        </li>
-                    ))}
-                </ul>
         </div>
-    );
+    )
 }
-
-export default App;
 
