@@ -14,7 +14,6 @@ mongoose.connect()
 
 app.use("/notes", noteRoutes);
 
-
 //test route
 app.get("/", (req,res) => {
     res.send("Notes API running");
