@@ -7,10 +7,6 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
     try {
-        const habits = await Habits.find();
-        res.json(habits);
-    } catch(err) {
-        res.status(500).json( {message: "Error fetching habits"});
+        
     }
-});
-
+})
