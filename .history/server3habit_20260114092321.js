@@ -43,15 +43,5 @@ router.patch("/:id.done", async (req,res) => {
     try {
         const habit = await Habits.findById(req.params.id);
         if (!habit) return res.status(404).json({ message: "Habit mot found"});
-
-        const today = new Date();
-        const last = habit.lastCompleted;
-
-        if (last) {
-            const diffTime = today - last;
-            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-
-            if 
-        }
     }
 })
