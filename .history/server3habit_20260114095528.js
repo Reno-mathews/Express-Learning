@@ -61,11 +61,6 @@ router.patch("/:id.done", async (req,res) => {
         } else {
             habit.streak = 1;
         }
-    habit.lastCompleted = today;
-    const updatedHabit = await habit.save();
-
-    res.json(updatedHabit);
-    } catch (err) {
-        res.status(5)
+    
     }
 })
