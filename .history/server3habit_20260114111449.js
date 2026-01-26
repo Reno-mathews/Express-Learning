@@ -71,5 +71,3 @@ router.patch("/:id.done", async (req,res) => {
         res.status(500).json({ message: "Error updating habit" });
     }
 });
-module.exports = router;
-

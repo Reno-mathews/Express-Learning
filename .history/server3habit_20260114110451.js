@@ -41,35 +41,6 @@ router.delete("/:id", async (req,res) => {
 // MARK habit as done 
 router.patch("/:id.done", async (req,res) => {
     try {
-        const habit = await Habits.findById(req.params.id);
-        if (!habit) return res.status(404).json({ message: "Habit not found" });
-
-        const today = new Date();
-        const last = habit.lastCompleted;
-
-        if (last) {
-            const diffTime = today - last;
-            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 *24));
-
-            if (diffDays === 0){
-                return res.json(habit);
-            } else if (diffDays === 1) {
-                habit.streak += 1;
-            } else {
-                habit.streak = 1;
-            }
-        } else {
-            habit.streak = 1;
-        }
-
-        habit.lastCompleted = today;
-
-        const updatedHabit = await habit.save();
-
-        res.json(updatedHabit);
-    } catch (err) {
-        res.status(500).json({ message: "Error updating habit" });
+        const 
     }
-});
-module.exports = router;
-
+})
