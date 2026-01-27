@@ -41,4 +41,4 @@ exports.updateTask = async (req, res) => {
 
     await task.save();
     res.json(task);
-};
+}
